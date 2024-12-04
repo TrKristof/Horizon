@@ -1,0 +1,9 @@
+Main colors:
+
+Navy blue: 0, 32, 69
+
+Teal: 0, 128, 128
+
+Charcole gray: 54, 69, 79
+
+white
