@@ -32,6 +32,7 @@ h1 {
     padding-bottom: 25px;
     font-weight: bold;
     background-color: rgb(0, 128, 128);
+    border-radius: 20px 20px 0px 0px;
 }
 
 .username {
@@ -75,14 +76,14 @@ button, input {
     transition: background-color 0.2s ease-in-out;
 }
 
-.loginBtn {
+.formBtn {
     background-color: rgb(0, 128, 128);
     color: rgb(246, 244, 241);
     margin-top: 15px;
     padding: 10px 18px;
 }
 
-.loginBtn:hover {
+.formBtn:hover {
     background-color: rgb(0, 85, 85);
     transition: background-color 0.2s ease-in-out;
 }
@@ -91,4 +92,9 @@ button, input {
     height: 40%;
     width: auto;
     padding-right: 250px;
+}
+
+.forgotP {
+    font-size: small;
+    color: rgb(255, 188, 202);
 }

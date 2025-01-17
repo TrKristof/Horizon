@@ -1,0 +1,19 @@
+INFO:
+Ez jelenleg csak pár dolog amit meg kéne csinálnunk ami 2025.01.17-én eszembe jutott.
+"-!" Fontos
+"--" Közepesen Fontos
+"-|" Szinte kész
+"**" Kész
+
+
+-!Regisztráció befejezése és tesztelése
+
+-|Login működik de még tesztelni kell majd a kinézetén is javítani kell
+
+-!Átnézni, hogy a faszomba működik az útvonal megadás mert teljesen clueless vagyok
+
+-!A teljeses jelenlegi adatbázis tesztelése, hogy minden működik e
+
+-!Főoldal megcsinálása a kinézet még nem fontos csak a navigáció kell
+
+--Új jelszó kérési oldal megcsinálása
