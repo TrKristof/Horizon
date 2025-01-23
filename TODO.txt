@@ -16,4 +16,10 @@ Ez jelenleg csak pár dolog amit meg kéne csinálnunk ami 2025.01.17-én eszemb
 
 -!Főoldal megcsinálása a kinézet még nem fontos csak a navigáció kell
 
---Új jelszó kérési oldal megcsinálása
+-!Új jelszó kérési oldal megcsinálása
+
+
+
+--Teendők a tesztelés előtt:
+Adatbázis táblák létrehozása: Ellenőrizd, hogy az összes szükséges tábla (felhasználók, jelszó-visszaállítási kérelmek stb.) helyesen van létrehozva.
+Session kezelés: Győződj meg róla, hogy a session kezelés rendben van, és a felhasználók bejelentkezhetnek, illetve kijelentkezhetnek.

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meeting Room - Horizon</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="navbar">
+        <h1 id="role-title">Meeting Room</h1>
+        <nav>
+            <button onclick="navigateTo('chat')">Back to Chat</button>
+        </nav>
+    </header>
+
+    <main>
+        <section id="meeting-room">
+            <h2>Welcome to the Meeting Room</h2>
+            <div id="meeting-status">
+                <p>You are currently <span id="meeting-action">not in the meeting.</span></p>
+            </div>
+            <div id="participants">
+                <h3>Participants:</h3>
+                <ul id="participants-list"></ul>
+            </div>
+            <div class="meeting-controls">
+                <button id="join-meeting-btn">Join Meeting</button>
+                <button id="leave-meeting-btn" disabled>Leave Meeting</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Horizon</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const role = localStorage.getItem('role') || 'User';
+            const joinButton = document.getElementById('join-meeting-btn');
+            const leaveButton = document.getElementById('leave-meeting-btn');
+            const meetingAction = document.getElementById('meeting-action');
+            const participantsList = document.getElementById('participants-list');
+
+            const participants = new Set();
+
+            joinButton.addEventListener('click', () => {
+                participants.add(role);
+                updateParticipantsList();
+                meetingAction.textContent = "in the meeting.";
+                joinButton.disabled = true;
+                leaveButton.disabled = false;
+            });
+
+            leaveButton.addEventListener('click', () => {
+                participants.delete(role);
+                updateParticipantsList();
+                meetingAction.textContent = "not in the meeting.";
+                joinButton.disabled = false;
+                leaveButton.disabled = true;
+            });
+
+            function updateParticipantsList() {
+                participantsList.innerHTML = '';
+                participants.forEach(participant => {
+                    const li = document.createElement('li');
+                    li.textContent = participant;
+                    participantsList.appendChild(li);
+                });
+            }
+        });
+
+        function navigateTo(page) {
+            window.location.href = `${page}.html`;
+        }
+    </script>
+</body>
+</html>

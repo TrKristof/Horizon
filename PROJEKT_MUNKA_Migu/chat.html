@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horizon Chat</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="navbar">
+        <h1 id="role-title">Chat Interface</h1>
+        <nav>
+            <button onclick="navigateTo('meeting-room')">Meeting Room</button>
+        </nav>
+    </header>
+
+    <main>
+        <section id="chat">
+            <h2>Chat Room</h2>
+            <div id="chat-window"></div>
+            <div class="chat-input">
+                <input type="text" id="message" placeholder="Type a message...">
+                <button id="send-btn">Send</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Horizon</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const role = localStorage.getItem('role') || 'User';
+            const roleTitle = document.getElementById('role-title');
+            const chatWindow = document.getElementById("chat-window");
+            const sendBtn = document.getElementById("send-btn");
+            const messageInput = document.getElementById("message");
+
+            if (role) {
+                roleTitle.textContent = `${role} Chat Interface - Horizon`;
+            }
+
+            sendBtn.addEventListener("click", () => {
+                const message = messageInput.value.trim();
+                if (message) {
+                    const messageElement = document.createElement("div");
+                    messageElement.innerHTML = `<strong>${role}:</strong> ${message}`;
+                    messageElement.className = "chat-message";
+                    chatWindow.appendChild(messageElement);
+                    messageInput.value = "";
+                    chatWindow.scrollTop = chatWindow.scrollHeight;
+                }
+            });
+        });
+
+        function navigateTo(page) {
+            window.location.href = `${page}.html`;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,379 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(54, 69, 79); /* Charcoal Gray */
+    color: white; /* White */
+}
+main {
+    padding: 20px;
+    background-color: rgb(54, 69, 79); /* Charcoal Gray */
+}
+
+h1, h2, h3 {
+    color: white; /* White */
+}
+
+#chat-window {
+    border: 1px solid rgb(0, 128, 128); /* Teal */
+    height: 200px;
+    overflow-y: scroll;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: white; /* White */
+    color: rgb(54, 69, 79); /* Charcoal Gray */
+}
+
+.chat-input {
+    display: flex;
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid rgb(0, 128, 128); /* Teal */
+    background-color: white; /* White */
+    color: rgb(54, 69, 79); /* Charcoal Gray */
+}
+
+.chat-input button {
+    background-color: rgb(0, 32, 69); /* Navy Blue */
+    color: white; /* White */
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.chat-input button:hover {
+    background-color: rgb(0, 128, 128); /* Teal */
+}
+/* General Reset */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(54, 69, 79); /* Charcoal Gray */
+    color: white; /* White */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Main content */
+main {
+    flex: 1; /* Fills remaining space, pushes footer to the bottom */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Navbar */
+.navbar {
+    background-color: rgb(0, 32, 69); /* Navy Blue */
+    color: white; /* White */
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar nav button {
+    background-color: rgb(0, 128, 128); /* Teal */
+    color: white; /* White */
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.navbar nav button:hover {
+    background-color: rgb(54, 69, 79); /* Charcoal Gray */
+}
+
+/* Meeting Room */
+#meeting-room {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.meeting-controls button {
+    margin: 10px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(0, 128, 128); /* Teal */
+    color: white;
+    cursor: pointer;
+}
+
+.meeting-controls button:disabled {
+    background-color: rgb(54, 69, 79); /* Charcoal Gray */
+    cursor: not-allowed;
+}
+
+.meeting-controls button:hover:not(:disabled) {
+    background-color: rgb(0, 32, 69); /* Navy Blue */
+}
+/* Chat Messages */
+.chat-message {
+    margin: 5px 0;
+    padding: 10px;
+    background-color: rgb(54, 69, 79); /* Charcoal Gray */
+    border-radius: 5px;
+    color: white;
+}
+
+/* Meeting Room */
+#participants {
+    margin-top: 20px;
+    text-align: left;
+}
+
+#participants-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+#participants-list li {
+    margin: 5px 0;
+    padding: 5px;
+    background-color: rgb(0, 128, 128); /* Teal */
+    color: white;
+    border-radius: 3px;
+}
+/* General Reset */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(54, 69, 79); /* Charcoal Gray */
+    color: white; /* White */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Navbar */
+.navbar {
+    background-color: rgb(0, 32, 69); /* Navy Blue */
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+/* General Reset */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(54, 69, 79); /* Charcoal Gray */
+    color: white; /* White */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Navbar */
+.navbar {
+    background-color: rgb(0, 32, 69); /* Navy Blue */
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+/* Role Selection Section */
+#role-selection {
+    margin-top: 50px;
+}
+
+.card {
+    background-color: rgb(54, 69, 79); /* Charcoal Gray */
+    border: 1px solid rgb(0, 128, 128); /* Teal */
+    color: black; /* Black Text */
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.card .btn {
+    background-color: rgb(0, 128, 128); /* Teal */
+    border: none;
+    color: white;
+}
+
+.card .btn:hover {
+    background-color: rgb(0, 32, 69); /* Navy Blue */
+}
+
+/* Image Styling */
+.card-img-top {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid rgb(0, 128, 128); /* Teal border under image */
+}
+
+/* General Reset */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(54, 69, 79); /* Charcoal Gray */
+    color: white; /* White */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Navbar */
+.navbar {
+    background-color: rgb(0, 32, 69); /* Navy Blue */
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Profile Image Styling */
+.profile-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+    background-color: rgb(54, 69, 79); /* Charcoal Gray */
+    border: 1px solid rgb(0, 128, 128); /* Teal */
+}
+
+.dropdown-item {
+    color: white;
+}
+
+.dropdown-item:hover {
+    background-color: rgb(0, 128, 128); /* Teal */
+}
+
+/* Role Selection Section */
+#role-selection {
+    margin-top: 50px;
+}
+
+.card {
+    background-color: rgb(54, 69, 79); /* Charcoal Gray */
+    border: 1px solid rgb(0, 128, 128); /* Teal */
+    color: black; /* Black Text */
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.card .btn {
+    background-color: rgb(0, 128, 128); /* Teal */
+    border: none;
+    color: white;
+}
+
+.card .btn:hover {
+    background-color: rgb(0, 32, 69); /* Navy Blue */
+}
+
+/* Image Styling */
+.card-img-top {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid rgb(0, 128, 128); /* Teal border under image */
+}
+/* General Reset */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(54, 69, 79); /* Charcoal Gray */
+    color: white; /* White */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Navbar */
+.navbar {
+    background-color: rgb(0, 32, 69); /* Navy Blue */
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Profile Image Styling */
+.profile-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+    background-color: rgb(54, 69, 79); /* Charcoal Gray */
+    border: 1px solid rgb(0, 128, 128); /* Teal */
+}
+
+.dropdown-item {
+    color: white;
+}
+
+.dropdown-item:hover {
+    background-color: rgb(0, 128, 128); /* Teal */
+}
+
+/* Role Selection Section */
+#role-selection {
+    margin-top: 50px;
+}
+
+.card {
+    background-color: rgb(54, 69, 79); /* Charcoal Gray */
+    border: 1px solid rgb(0, 128, 128); /* Teal */
+    color: black; /* Black Text */
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.card .btn {
+    background-color: rgb(0, 128, 128); /* Teal */
+    border: none;
+    color: white;
+}
+
+.card .btn:hover {
+    background-color: rgb(0, 32, 69); /* Navy Blue */
+}
+
+/* Image Styling */
+.card-img-top {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid rgb(0, 128, 128); /* Teal border under image */
+}
+
+/* Footer */
+footer {
+    background-color: rgb(0, 32, 69); /* Navy Blue */
+    color: white;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+}
