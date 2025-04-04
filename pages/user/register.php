@@ -1,9 +1,8 @@
 <?php
-// Az adatbázis kapcsolat betöltése
 require_once "/xampp/htdocs/Horizon/database/db.php";
 
 // Iskolák listájának lekérése az adatbázisból
-$sql = "SELECT id, name FROM schools WHERE isValid = 1";
+$sql = "SELECT id, name FROM school WHERE isValid = 1";
 $result = $connection->query($sql);
 $schools = $result->fetch_all(MYSQLI_ASSOC);
 
@@ -12,7 +11,7 @@ require "/xampp/htdocs/Horizon/views/header.php";
 ?>
 
 <!-- Regisztrációs űrlap -->
-<img src="/Horizon/assets/imgs/logo1-test.webp" alt="Háttérkép" title="Horizon" class="backgroundLogo col-5">
+<img src="/Horizon/assets/imgs/Logo_Text_svg" alt="Háttérkép" title="Horizon" class="backgroundLogo col-5">
 <div class="loginSurface col-5">
     <h1>Regisztráció</h1>
     <form action="/Horizon/controllers/uRegister_controller.php" method="POST">

@@ -11,7 +11,7 @@ if (isset($_SESSION["alert"])): ?>
 <?php endif; ?>
 
 <!-- Bejelentkezési űrlap -->
-<img src="/Horizon/assets/imgs/logo1-test.webp" alt="Háttérkép" title="Horizon" class="backgroundLogo col-5">
+<img src="/Horizon/assets/imgs/Logo_Text_1.svg" alt="Háttérkép" title="Horizon" class="backgroundLogo col-5">
 <div class="loginSurface col-5">
     <h1>Bejelentkezés</h1>
     <form action="/Horizon/controllers/uLogin_controller.php" method="POST">
