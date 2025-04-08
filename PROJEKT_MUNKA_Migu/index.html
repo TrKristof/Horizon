@@ -23,38 +23,43 @@
     </header>
 
     <main>
-        <section id="role-selection" class="container text-center">
-            <h2>Select Your Role</h2>
-            <div class="row justify-content-center mt-4">
-                <!-- Student Card -->
-                <div class="col-md-4">
-                    <div class="card">
-                        <img src="img/student.png" class="card-img-top" alt="Student Image">
-                        <div class="card-body">
-                            <h5 class="card-title">Student</h5>
-                            <p class="card-text">Access the chat and meeting room as a student.</p>
-                            <button class="btn btn-primary" onclick="selectRole('Student', 'img/student.png')">Select</button>
-                        </div>
-                    </div>
-                </div>
+        <section class="hero-section">
+            <img src="assets/imgs/horizon-logo.svg" alt="Horizon Logo" class="hero-logo">
+            <h1 class="hero-title">HORIZON</h1>
+            <a href="login.php" class="btn btn-primary login-btn">Bejelentkezés</a>
+            <p class="register-text">Nincs fíkód? <a href="register.php">REGISZTRÁCIÓ</a></p>
+        </section>
 
-                <!-- Teacher Card -->
-                <div class="col-md-4">
-                    <div class="card">
-                        <img src="img/teacher.png" class="card-img-top" alt="Teacher Image">
-                        <div class="card-body">
-                            <h5 class="card-title">Teacher</h5>
-                            <p class="card-text">Manage chats and meetings as a teacher.</p>
-                            <button class="btn btn-primary" onclick="selectRole('Teacher', 'img/teacher.png')">Select</button>
-                        </div>
+        <section class="role-tabs">
+            <div class="tab-buttons">
+                <button class="tab active">Diákoknak</button>
+                <button class="tab">Iskoláknak</button>
+                <button class="tab">Tanároknak</button>
+            </div>
+            <div class="tab-content">
+                <h2>ASDJHGASF, asdhFSAtz, asuzfgtafusufazg</h2>
+                <div class="main-img">
+                    <p>KÉP</p>
+                </div>
+                <div class="desc-section">
+                    <div class="side-img">
+                        <p>KÉP</p>
+                    </div>
+                    <div class="desc-text">
+                        <p>ASGFDSGfjahsfgsuhgasgfhjafghsfazu jhfsahufhaasj dhgsajhdgashdgsajdhagdjhsagd. sadsajkhdfa jkgfSHJGAFHJGSAFJHGSAFSAjksh. asf ioasfjuaiofhjashfaiusf hsaif</p>
                     </div>
                 </div>
+                <div class="text-block">
+                    <p>aghdsajkghdkjhaga, asdjhgfajh adjfgadhjg adfhjgadfjhagaqda gadhfakfdfu akduigfadufga. afdhgfaukdgf jhggadjkfgajhdfg djhagf kahdg ajkgfdak. euhasfdjusgfhjdgf hdsfrezsfgb fjhgdah afgh djhag hdag fjhgd jagfhjadgfjha gjfhgd.</p>
+                </div>
+                <img src="assets/imgs/horizon-logo.svg" alt="Horizon logo" class="footer-logo">
             </div>
+            <div id="typing-indicator" style="display: none;">Typing<span class="dot one">.</span><span class="dot two">.</span><span class="dot three">.</span></div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2024 Horizon</p>
+        <p>FOOTER</p>
     </footer>
 
     <!-- Bootstrap JS and Popper for dropdown functionality -->
@@ -62,11 +67,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
 
     <script>
-        // Update profile picture and role from localStorage on page load
         window.onload = function() {
             const role = localStorage.getItem('role');
             const profilePic = document.getElementById('profilePic');
-            
+
             if (role) {
                 if (role === 'Student') {
                     profilePic.src = 'img/student.png';
@@ -77,22 +81,21 @@
         };
 
         function selectRole(role, imgSrc) {
-            // Store the selected role and profile image in localStorage
             localStorage.setItem('role', role);
             localStorage.setItem('profilePic', imgSrc);
-            window.location.href = "chat.html"; // Redirect to chat page after role selection
+            window.location.href = "chat.html";
         }
 
         function logout() {
             localStorage.removeItem('role');
             localStorage.removeItem('profilePic');
-            window.location.href = "index.html";  // Redirect to home page after logout
+            window.location.href = "index.html";
         }
 
         function changeRole() {
             localStorage.removeItem('role');
             localStorage.removeItem('profilePic');
-            window.location.href = "index.html";  // Redirect to role selection page
+            window.location.href = "index.html";
         }
     </script>
 </body>

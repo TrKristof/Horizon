@@ -2,6 +2,7 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
+<<<<<<< Updated upstream:assets/imgs/Logo.svg
    width="119mm"
    height="117.5mm"
    viewBox="0 0 119 117.5"
@@ -33,11 +34,25 @@
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
      inkscape:current-layer="svg1" />
+=======
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg1"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+>>>>>>> Stashed changes:PROJEKT_MUNKA_Migu/img/Logo.svg
   <defs
      id="defs1">
     <rect
        x="49.705669"
+<<<<<<< Updated upstream:assets/imgs/Logo.svg
        y="589.56445"
+=======
+       y="589.56446"
+>>>>>>> Stashed changes:PROJEKT_MUNKA_Migu/img/Logo.svg
        width="491.53384"
        height="156.02057"
        id="rect20" />
@@ -123,6 +138,7 @@
        gradientTransform="matrix(0.89999995,0,0,0.89999995,46.302085,1.5382324e-6)" />
   </defs>
   <g
+<<<<<<< Updated upstream:assets/imgs/Logo.svg
      id="layer1"
      transform="matrix(0.99779525,0,0,0.98744409,-46.099998,-5.614982e-8)"
      style="stroke-width:1.00744">
@@ -186,5 +202,93 @@
        id="text20"
        transform="matrix(0.58458031,0,0,0.58559113,-66.894165,-222.00659)"
        aria-label="HORIZON" />
+=======
+     id="layer1">
+    <ellipse
+       style="opacity:1;mix-blend-mode:normal;fill:url(#linearGradient12);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.265001;stroke-dasharray:none"
+       id="path1"
+       cx="-58.960667"
+       cy="106.15226"
+       transform="rotate(-89.691569)"
+       rx="59.531246"
+       ry="59.53125" />
+    <ellipse
+       style="mix-blend-mode:normal;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.265001;stroke-dasharray:none"
+       id="path1-0"
+       cx="-58.960667"
+       cy="106.15226"
+       transform="rotate(-89.691569)"
+       rx="50.006248"
+       ry="50.006245" />
+    <circle
+       style="mix-blend-mode:normal;fill:url(#linearGradient15);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.265001;stroke-dasharray:none"
+       id="path1-4"
+       cx="-58.960667"
+       cy="106.15226"
+       transform="rotate(-89.691569)"
+       r="40.481251" />
+    <ellipse
+       style="mix-blend-mode:normal;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.265001;stroke-dasharray:none"
+       id="path1-49"
+       cx="-58.960667"
+       cy="106.15226"
+       transform="rotate(-89.691569)"
+       rx="30.956245"
+       ry="30.956247" />
+    <circle
+       style="mix-blend-mode:normal;fill:url(#linearGradient17);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.265001;stroke-dasharray:none"
+       id="path1-6"
+       cx="-58.960667"
+       cy="106.15226"
+       transform="rotate(-89.691569)"
+       r="21.43125" />
+    <rect
+       style="opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.249614;stroke-dasharray:none"
+       id="rect8"
+       width="119.0625"
+       height="59.53125"
+       x="46.302086"
+       y="59.53125" />
+    <path
+       style="opacity:1;fill:url(#linearGradient19);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.264999;stroke-dasharray:none"
+       id="path17"
+       d="m 46.302094,-59.53125 a 59.53125,59.53125 0 0 1 59.531246,-59.53125 59.53125,59.53125 0 0 1 59.53125,59.53125 z"
+       transform="scale(1,-1)" />
+    <rect
+       style="opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.264999;stroke-dasharray:none"
+       id="rect19"
+       width="124.83336"
+       height="5.9531245"
+       x="43.737255"
+       y="59.53125" />
+    <rect
+       style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.264999;stroke-dasharray:none"
+       id="rect19-1"
+       width="119.0625"
+       height="5.9531245"
+       x="46.302086"
+       y="71.437485" />
+    <rect
+       style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.264999;stroke-dasharray:none"
+       id="rect19-3"
+       width="119.0625"
+       height="5.9531245"
+       x="46.302086"
+       y="83.343735" />
+    <rect
+       style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.264999;stroke-dasharray:none"
+       id="rect19-8"
+       width="119.0625"
+       height="5.9531245"
+       x="46.302086"
+       y="95.249992" />
+    <rect
+       style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.264999;stroke-dasharray:none"
+       id="rect19-83"
+       width="119.0625"
+       height="5.9531245"
+       x="46.302086"
+       y="107.15623" />
+>>>>>>> Stashed changes:PROJEKT_MUNKA_Migu/img/Logo.svg
   </g>
 </svg>

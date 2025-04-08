@@ -201,6 +201,7 @@ footer {
 * {
     transition: all 0.3s ease-in-out;
 }
+
 .chat-message {
     margin: 5px 0;
     padding: 10px;
@@ -221,16 +222,20 @@ footer {
         opacity: 1;
     }
 }
+
 button:active {
     transform: scale(0.95);
 }
+
 .card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0, 128, 128, 0.4);
 }
+
 .profile-img:hover {
     box-shadow: 0 0 10px rgb(0, 128, 128);
 }
+
 .dropdown-menu {
     animation: fadeIn 0.3s ease-in-out;
 }
@@ -245,6 +250,7 @@ button:active {
         transform: translateY(0);
     }
 }
+
 #typing-indicator {
     font-style: italic;
     color: rgb(0, 128, 128); /* Teal */
