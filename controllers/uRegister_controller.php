@@ -1,5 +1,4 @@
 <?php
-session_start();
 require_once "/xampp/htdocs/Horizon/database/db.php";
 
 function validatePassword($password) {
@@ -11,66 +10,82 @@ function validatePassword($password) {
     return $hasUpperCase && $hasLowerCase && $hasNumber && $isProperLength;
 }
 
+$errors = [];
+$success = "";
+$formData = [
+    "name" => $_POST["name"] ?? "",
+    "email" => $_POST["email"] ?? "",
+    "studentNumber" => $_POST["studentNumber"] ?? "",
+    "school" => $_POST["school"] ?? ""
+];
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $_POST["name"];
     $email = $_POST["email"];
     $password = $_POST["password"];
     $studentNumber = $_POST["studentNumber"];
-    $school_id = $_POST["school"];
     $passwordConf = $_POST["passwordCheck"];
+    $school_id = $_POST["school"];
 
     if ($password !== $passwordConf) {
-        $_SESSION["alert"] = ["type" => "danger", "message" => "Passwords do not match."];
-        header("Location: /Horizon/pages/user/register.php");
-        exit();
+        $errors[] = "Nem egyeznek a jelszavak.";
     }
 
     if (!validatePassword($password)) {
-        $_SESSION["alert"] = ["type" => "danger", "message" => "Password must be at least 8 characters long and include uppercase, lowercase, and a number."];
-        header("Location: /Horizon/pages/user/register.php");
-        exit();
+        $errors[] = "A jelszónak legalább 8 karakternek kell lennie, tartalmaznia kell egy kis és nagy betűt és egy számot.";
     }
-    
-    // MÉG NEM JÓ
+
     // Van e ilyen diák szám
-    $sql = "SELECT * FROM student_numbers WHERE student_number = ? AND school_id = ?";
+    $sql = "SELECT * FROM students WHERE StudentCard = ? AND SchoolId = ?";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("si", $studentNumber, $school_id);
+    $stmt->bind_param("ii", $studentNumber, $school_id);
     $stmt->execute();
     $result = $stmt->get_result();
 
     if ($result->num_rows === 0) {
-        $_SESSION["alert"] = ["type" => "danger", "message" => "Invalid student number or not registered with the selected school."];
-        header("Location: /Horizon/pages/user/register.php");
-        exit();
+        $errors[] = "Nem jó diákigazolvány szám vagy rossz iskolát választottál.";
+    }
+
+    //Regisztráltak e már = van e már adat a diákszámnál
+    $student = $result->fetch_assoc();
+    if (!empty($student["Email"])) {
+        $errors[] = "Ez a diákigazolvány szám már regisztrálva van.";
     }
 
     // Van e ilyen email
-    $sql = "SELECT * FROM students WHERE email = ?";
+    $sql = "SELECT * FROM students WHERE Email = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("s", $email);
     $stmt->execute();
     $result = $stmt->get_result();
 
     if ($result->num_rows > 0) {
-        $_SESSION["alert"] = ["type" => "danger", "message" => "Email is already registered."];
-        header("Location: /Horizon/pages/user/register.php");
-        exit();
+        $errors[] = "Van már ilyen email cím.";
     }
 
-    // Jelszó hashelése és feltöltés
-    $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-    $sql = "INSERT INTO students (name, email, password, school_id) VALUES (?, ?, ?, ?)";
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("sssi", $name, $email, $hashedPassword, $school_id);
+    if (empty($errors)) {
+        // Jelszó hashelése és feltöltés
+        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
-    if ($stmt->execute()) {
-        $_SESSION["alert"] = ["type" => "success", "message" => "Registration successful! Please log in."];
-        header("Location: /Horizon/pages/user/login.php");
-    } else {
-        $_SESSION["alert"] = ["type" => "danger", "message" => "Registration failed. Please try again."];
-        header("Location: /Horizon/pages/user/register.php");
+        $now = date("Y-m-d H:i:s");
+
+        $stmt = $conn->prepare("UPDATE students SET Name = ?, Email = ?, Password = ?, IsActive = 1, Date = ? WHERE StudentCard = ? AND SchoolId = ?");
+        $stmt->bind_param("sssiii", $name, $email, $hashedPassword, $now, $studentNumber, $school_id);
+
+        if ($stmt->execute()) {
+            $success = "Sikeres regisztráció! Jelentkezz be.";
+            $formData = [];
+        } else {
+            $errors[] = "Hiba történt a regisztráció során. Próbáld újra.";
+        }
     }
+    
 
-    $stmt->close();
+    $_SESSION["register_errors"] = $errors;
+    $_SESSION["register_success"] = $success;
+    $_SESSION["register_form"] = $formData;
+
+    // Visszairányítás az űrlapra (ahelyett, hogy ott lenne a logika)
+    header("Location: /Horizon/pages/user/register.php");
+    exit();
 }

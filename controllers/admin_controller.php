@@ -1,41 +1,14 @@
 <?php
-require_once "db.php";
+require "/xampp/htdocs/Horizon/database/db.php";
 
-if (isset($_GET['type'])) {
-    $type = $_GET['type'];
+$id = intval($_GET['id']);
 
-    if ($type == "schools") {
-        $query = "SELECT * FROM School";
-    } elseif ($type == "teachers") {
-        $query = "SELECT * FROM Teachers";
-    } elseif ($type == "students") {
-        $query = "SELECT * FROM Students";
-    } else {
-        echo "<p>Invalid request.</p>";
-        exit();
-    }
+$school = $conn->query("SELECT * FROM School WHERE Id = $id")->fetch_assoc();
+$teachers = $conn->query("SELECT Name FROM Teachers WHERE School_Id = $id")->fetch_all(MYSQLI_ASSOC);
+$students = $conn->query("SELECT Name FROM Students WHERE School_Id = $id")->fetch_all(MYSQLI_ASSOC);
 
-    $result = $conn->query($query);
-
-    if ($result->num_rows > 0) {
-        echo "<h2>" . ucfirst($type) . "</h2>";
-        echo "<table class='table table-bordered'><tr>";
-
-        $fields = $result->fetch_fields();
-        foreach ($fields as $field) {
-            echo "<th>{$field->name}</th>";
-        }
-        echo "</tr>";
-
-        while ($row = $result->fetch_assoc()) {
-            echo "<tr>";
-            foreach ($row as $value) {
-                echo "<td>$value</td>";
-            }
-            echo "</tr>";
-        }
-        echo "</table>";
-    } else {
-        echo "<p>No records found.</p>";
-    }
-}
+echo json_encode([
+  'school' => $school,
+  'teachers' => $teachers,
+  'students' => $students
+]);

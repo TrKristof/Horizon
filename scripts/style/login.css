@@ -73,7 +73,7 @@ button, input {
 
 .register:hover {
     background-color: rgb(202, 0, 0);
-    transition: background-color 0.2s ease-in-out;
+    transition: background-color 0.3s ease-in-out;
 }
 
 .formBtn {
@@ -85,13 +85,12 @@ button, input {
 
 .formBtn:hover {
     background-color: rgb(0, 85, 85);
-    transition: background-color 0.2s ease-in-out;
+    transition: background-color 0.3s ease-in-out;
 }
 
 .backgroundLogo {
-    height: 40%;
+    height: 60%;
     width: auto;
-    padding-right: 250px;
 }
 
 .forgotP {

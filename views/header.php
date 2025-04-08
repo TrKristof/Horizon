@@ -10,4 +10,3 @@
     <title>Horizon</title>
 </head>
 <body>
-    <div class="container col-12">

@@ -1,5 +1,4 @@
 <?php
-session_start();
 require_once "/xampp/htdocs/Horizon/database/db.php";
 
 // Ellenőrizzük, hogy van-e POST kérés

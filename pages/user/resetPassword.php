@@ -1,5 +1,6 @@
 <?php
 require_once "/xampp/htdocs/Horizon/views/header.php"; // Fejléc megjelenítése
+session_start();
 ?>
 
 <div class="container mt-5">

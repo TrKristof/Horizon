@@ -134,7 +134,7 @@ CREATE TABLE `notes` (
 -- Tábla szerkezet ehhez a táblához `school`
 --
 
-CREATE TABLE `school` (
+CREATE TABLE `schools` (
   `Id` int(11) NOT NULL,
   `Name` varchar(100) NOT NULL,
   `Country` varchar(100) NOT NULL,
@@ -150,7 +150,7 @@ CREATE TABLE `school` (
 -- A tábla adatainak kiíratása `school`
 --
 
-INSERT INTO `school` (`Id`, `Name`, `Country`, `Address`, `Email`, `Password`, `Date`, `IsActive`, `ExpirationDate`) VALUES
+INSERT INTO `schools` (`Id`, `Name`, `Country`, `Address`, `Email`, `Password`, `Date`, `IsActive`, `ExpirationDate`) VALUES
 (1, 'Springfield High', 'USA', '742 Evergreen Terrace', 'admin1@springfield.edu', 'password123', '2025-04-03 09:39:33', 1, '2026-04-03 09:39:33'),
 (2, 'Riverdale Academy', 'Canada', '123 River St', 'admin2@riverdale.edu', 'password123', '2025-04-03 09:39:33', 1, '2026-04-03 09:39:33'),
 (3, 'Hill Valley Institute', 'UK', '88 Time St', 'admin3@hillvalley.edu', 'password123', '2025-04-03 09:39:33', 1, '2026-04-03 09:39:33');
@@ -365,7 +365,7 @@ ALTER TABLE `notes`
 --
 -- A tábla indexei `school`
 --
-ALTER TABLE `school`
+ALTER TABLE `schools`
   ADD PRIMARY KEY (`Id`),
   ADD UNIQUE KEY `Name` (`Name`),
   ADD UNIQUE KEY `Address` (`Address`),
@@ -452,7 +452,7 @@ ALTER TABLE `assignments_submissions`
 -- Megkötések a táblához `classes`
 --
 ALTER TABLE `classes`
-  ADD CONSTRAINT `fk_classes_school` FOREIGN KEY (`SchoolId`) REFERENCES `school` (`Id`),
+  ADD CONSTRAINT `fk_classes_school` FOREIGN KEY (`SchoolId`) REFERENCES `schools` (`Id`),
   ADD CONSTRAINT `fk_classes_teacher` FOREIGN KEY (`TeacherId`) REFERENCES `teachers` (`Id`);
 
 --
@@ -485,7 +485,7 @@ ALTER TABLE `notes`
 -- Megkötések a táblához `students`
 --
 ALTER TABLE `students`
-  ADD CONSTRAINT `fk_students_school` FOREIGN KEY (`SchoolId`) REFERENCES `school` (`Id`);
+  ADD CONSTRAINT `fk_students_school` FOREIGN KEY (`SchoolId`) REFERENCES `schools` (`Id`);
 
 --
 -- Megkötések a táblához `submission_files`
@@ -497,7 +497,7 @@ ALTER TABLE `submission_files`
 -- Megkötések a táblához `teachers`
 --
 ALTER TABLE `teachers`
-  ADD CONSTRAINT `fk_teachers_school` FOREIGN KEY (`SchoolId`) REFERENCES `school` (`Id`);
+  ADD CONSTRAINT `fk_teachers_school` FOREIGN KEY (`SchoolId`) REFERENCES `schools` (`Id`);
 
 --
 -- Megkötések a táblához `teacher_student`
