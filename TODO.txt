@@ -1,25 +1,18 @@
-INFO:
-Ez jelenleg csak pár dolog amit meg kéne csinálnunk ami 2025.01.17-én eszembe jutott.
-"-!" Fontos
-"--" Közepesen Fontos
-"-|" Szinte kész
-"**" Kész
+1. Összekötni a meglévő oldalakat, hogy mindegyik elérhető legyen
 
+1. Minden meglévő oldalnak a backendje rendesen működjön
+--------
+2. A meglévő oldalak kiszépítése. Minden normálisan nézzen ki és rendes szövegekkel és képekkel legyenek kitöltve
 
--!Regisztráció befejezése és tesztelése
+2. Egy tesztkört nyomni, hogy minden működik a Felhasználói szempontból
+--------
+3. Egy felhasználói felületet ahol láthatod az adataidat és stb.
 
--|Login működik de még tesztelni kell majd a kinézetén is javítani kell
+3. Egy ilyem Teamses menü ahol látod az összes osztályt amibe benne vagy esetleg eg külön részt ahol a feladataidat látod
 
--!Átnézni, hogy a faszomba működik az útvonal megadás mert teljesen clueless vagyok
+NOTE:
+A headerben megváltoztattam az elérést a css-ekhez a külön oldalakhoz.(<link rel="stylesheet" href="<?php echo htmlspecialchars($pageStylesheet); ?>">)
 
--!A teljeses jelenlegi adatbázis tesztelése, hogy minden működik e
+A php-val kell meghívnod az oldalon a css-t ezzel: $pageStylesheet
 
--!Főoldal megcsinálása a kinézet még nem fontos csak a navigáció kell
-
--!Új jelszó kérési oldal megcsinálása
-
-
-
---Teendők a tesztelés előtt:
-Adatbázis táblák létrehozása: Ellenőrizd, hogy az összes szükséges tábla (felhasználók, jelszó-visszaállítási kérelmek stb.) helyesen van létrehozva.
-Session kezelés: Győződj meg róla, hogy a session kezelés rendben van, és a felhasználók bejelentkezhetnek, illetve kijelentkezhetnek.
+Nekem ez még nem működik szóval ha ezt az üzenetet olvasod akkor neked se lesz jó:)
