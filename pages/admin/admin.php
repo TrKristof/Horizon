@@ -19,29 +19,46 @@ require "/xampp/htdocs/Horizon/views/header.php";
             $sql = "SELECT Id, Name, Email, ExpirationDate FROM schools";
             $result = $conn->query($sql);
             if ($result->num_rows > 0):
-                while($row = $result->fetch_assoc()): ?>
+                while($row = $result->fetch_assoc()): 
+                    $schoolId = $row["Id"];
+
+                    // Diákok
+                    $studentCountResult = $conn->query("SELECT COUNT(*) AS count FROM students WHERE SchoolId = $schoolId");
+                    $studentCount = ($studentCountResult && $studentCountResult->num_rows > 0) ? $studentCountResult->fetch_assoc()['count'] : 0;
+
+                    // Tanárok
+                    $teacherCountResult = $conn->query("SELECT COUNT(*) AS count FROM teachers WHERE SchoolId = $schoolId");
+                    $teacherCount = ($teacherCountResult && $teacherCountResult->num_rows > 0) ? $teacherCountResult->fetch_assoc()['count'] : 0;
+                    
+                    // Szín logika
+                    $expirationDate = new DateTime($row["ExpirationDate"]);
+                    $now = new DateTime();
+                    $interval = $now->diff($expirationDate);
+                    $daysLeft = (int)$interval->format('%r%a');
+
+                    if ($daysLeft <= 365) {
+                        $expirationColor = "text-danger";
+                    } elseif ($daysLeft <= 1095) {
+                        $expirationColor = "text-warning"; 
+                    } else {
+                        $expirationColor = "text-success";
+                    }
+                ?>
                     <div class="col-md-3 school-card text-center" data-name="<?= strtolower($row["Name"]) ?>" data-id="<?= $row["Id"] ?>">
                         <div class="card h-100 shadow-sm p-3 school-card-click" style="cursor:pointer;">
                             <h5 class="card-title"><?= $row["Name"] ?></h5>
                             <p class="card-text"><?= $row["Email"] ?></p>
-                            <p class="card-text"><small>Lejárat: <?= $row["ExpirationDate"] ?></small></p>
+                            <p class="card-text">
+                                Tanárok: <?= $teacherCount ?> <br>
+                                Diákok: <?= $studentCount ?>
+                            </p>
+                            <p class="card-text <?= $expirationColor ?>"><small>Lejárat: <?= $row["ExpirationDate"] ?></small></p>
                         </div>
                     </div>
                 <?php endwhile;
             endif;
             ?>
         </div>
-    </div>
-
-    <!-- Részletek -->
-    <div id="schoolDetails" class="mt-5" style="display:none;">
-        <h3 id="schoolName" class="mb-3"></h3>
-
-        <h5>Tanárok</h5>
-        <div class="border p-3 mb-4" style="max-height:200px; overflow-y:auto;" id="teacherList"></div>
-
-        <h5>Diákok</h5>
-        <div class="border p-3" style="max-height:200px; overflow-y:auto;" id="studentList"></div>
     </div>
 </div>
 
