@@ -45,15 +45,17 @@ require "/xampp/htdocs/Horizon/views/header.php";
                     }
                 ?>
                     <div class="col-md-3 school-card text-center" data-name="<?= strtolower($row["Name"]) ?>" data-id="<?= $row["Id"] ?>">
-                        <div class="card h-100 shadow-sm p-3 school-card-click" style="cursor:pointer;">
-                            <h5 class="card-title"><?= $row["Name"] ?></h5>
-                            <p class="card-text"><?= $row["Email"] ?></p>
-                            <p class="card-text">
-                                Tanárok: <?= $teacherCount ?> <br>
-                                Diákok: <?= $studentCount ?>
-                            </p>
-                            <p class="card-text <?= $expirationColor ?>"><small>Lejárat: <?= $row["ExpirationDate"] ?></small></p>
-                        </div>
+                        <a href="school_details.php?id=<?= $row["Id"] ?>" style="text-decoration: none; color: inherit;">
+                            <div class="card h-100 shadow-sm p-3 school-card-click" style="cursor:pointer;">
+                                <h5 class="card-title"><?= $row["Name"] ?></h5>
+                                <p class="card-text"><?= $row["Email"] ?></p>
+                                <p class="card-text">
+                                    Tanárok: <?= $teacherCount ?> <br>
+                                    Diákok: <?= $studentCount ?>
+                                </p>
+                                <p class="card-text <?= $expirationColor ?>"><small>Lejárat: <?= $row["ExpirationDate"] ?></small></p>
+                            </div>
+                        </a>
                     </div>
                 <?php endwhile;
             endif;
