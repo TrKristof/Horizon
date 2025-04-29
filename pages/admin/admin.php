@@ -1,7 +1,13 @@
 <?php
 require_once "/xampp/htdocs/Horizon/database/db.php";
 
-$pageStylesheet = "/xampp/htdocs/Horizon/scripts/style/adminPage.css";
+$pageStylesheet = "/Horizon/scripts/style/adminPage.css";
+
+//admin e
+/*if (!isset($_SESSION["user_type"]) || $_SESSION["user_type"] !== "admin") {
+    header("Location: /Horizon/pages/user/login.php");
+    exit();
+}*/
 
 require "/xampp/htdocs/Horizon/views/header.php";
 ?>

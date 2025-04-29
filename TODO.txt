@@ -14,5 +14,5 @@ NOTE:
 A headerben megváltoztattam az elérést a css-ekhez a külön oldalakhoz.(<link rel="stylesheet" href="<?php echo htmlspecialchars($pageStylesheet); ?>">)
 
 A php-val kell meghívnod az oldalon a css-t ezzel: $pageStylesheet
+PL: $pageStylesheet = "/Horizon/scripts/style/adminPage.css";
 
-Nekem ez még nem működik szóval ha ezt az üzenetet olvasod akkor neked se lesz jó:)

@@ -1,9 +1,16 @@
 <?php
 require_once "/xampp/htdocs/Horizon/database/db.php";
+
+//admin e
+/*if (!isset($_SESSION["user_type"]) || $_SESSION["user_type"] !== "admin") {
+    header("Location: /Horizon/pages/user/login.php");
+    exit();
+}*/
+
 require "/xampp/htdocs/Horizon/views/header.php";
 
 if (!isset($_GET['id'])) {
-    echo "Nincs iskola megadva!";
+    header("Location: /Horizon/pages/admin/admin.php");
     exit;
 }
 
