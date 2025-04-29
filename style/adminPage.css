@@ -1,0 +1,17 @@
+#scrollableCards {
+    max-height: 400px;
+    overflow-y: auto;
+    padding-right: 15px;
+}
+
+.school-card {
+    min-width: 280px;
+}
+
+.school-card .card {
+    transition: transform 0.2s ease;
+}
+
+.school-card .card:hover {
+    transform: scale(1.02);
+}
