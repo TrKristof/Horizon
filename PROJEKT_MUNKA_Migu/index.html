@@ -1,102 +1,77 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hu">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Horizon - Role Selection</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Horizon</title>
+  <link rel="stylesheet" href="/style/styles.css">
 </head>
 <body>
-    <header class="navbar">
-        <div class="container d-flex justify-content-between align-items-center">
-            <h1>Welcome to Horizon</h1>
-            <!-- Profile Section -->
-            <div class="dropdown">
-                <img src="" id="profilePic" class="profile-img dropdown-toggle" data-bs-toggle="dropdown" alt="Profile" aria-expanded="false">
-                <ul class="dropdown-menu" aria-labelledby="profileDropdown">
-                    <li><a class="dropdown-item" href="#" onclick="changeRole()">Change Role</a></li>
-                    <li><a class="dropdown-item" href="#" onclick="logout()">Log Out</a></li>
-                </ul>
-            </div>
-        </div>
-    </header>
 
-    <main>
-        <section class="hero-section">
-            <img src="assets/imgs/horizon-logo.svg" alt="Horizon Logo" class="hero-logo">
-            <h1 class="hero-title">HORIZON</h1>
-            <a href="login.php" class="btn btn-primary login-btn">Bejelentkezés</a>
-            <p class="register-text">Nincs fíkód? <a href="register.php">REGISZTRÁCIÓ</a></p>
-        </section>
+  <header>
+    <nav>
+      <img src="assets/imgs/horizon_logo.png" alt="Horizon logó" height="40">
+      <a href="/pages/user/rolunk.php">Horizon</a>
+      <a href="#">Profil</a>
+      <a href="/pages/user/login.php">Jelentkezés</a>
+    </nav>
+  </header>
 
-        <section class="role-tabs">
-            <div class="tab-buttons">
-                <button class="tab active">Diákoknak</button>
-                <button class="tab">Iskoláknak</button>
-                <button class="tab">Tanároknak</button>
-            </div>
-            <div class="tab-content">
-                <h2>ASDJHGASF, asdhFSAtz, asuzfgtafusufazg</h2>
-                <div class="main-img">
-                    <p>KÉP</p>
-                </div>
-                <div class="desc-section">
-                    <div class="side-img">
-                        <p>KÉP</p>
-                    </div>
-                    <div class="desc-text">
-                        <p>ASGFDSGfjahsfgsuhgasgfhjafghsfazu jhfsahufhaasj dhgsajhdgashdgsajdhagdjhsagd. sadsajkhdfa jkgfSHJGAFHJGSAFJHGSAFSAjksh. asf ioasfjuaiofhjashfaiusf hsaif</p>
-                    </div>
-                </div>
-                <div class="text-block">
-                    <p>aghdsajkghdkjhaga, asdjhgfajh adjfgadhjg adfhjgadfjhagaqda gadhfakfdfu akduigfadufga. afdhgfaukdgf jhggadjkfgajhdfg djhagf kahdg ajkgfdak. euhasfdjusgfhjdgf hdsfrezsfgb fjhgdah afgh djhag hdag fjhgd jagfhjadgfjha gjfhgd.</p>
-                </div>
-                <img src="assets/imgs/horizon-logo.svg" alt="Horizon logo" class="footer-logo">
-            </div>
-            <div id="typing-indicator" style="display: none;">Typing<span class="dot one">.</span><span class="dot two">.</span><span class="dot three">.</span></div>
-        </section>
-    </main>
+  <section class="hero">
+    <img src="assets/imgs/horizon_logo.png" alt="Horizon logó nagy" class="hero-logo">
+    <div class="login-box">
+      <button>Bejelentkezés</button>
+      <p>Nincs fiókod? <a href="/pages/user/register.php">REGISZTRÁCIÓ</a></p>
+    </div>
+  </section>
 
-    <footer>
-        <p>FOOTER</p>
-    </footer>
+  <section class="role-tabs">
+    <button class="tab diak">Diákoknak</button>
+    <button class="tab iskola">Iskoláknak</button>
+    <button class="tab tanar">Tanároknak</button>
+  </section>
 
-    <!-- Bootstrap JS and Popper for dropdown functionality -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+  <main class="content-box">
+    <h2>Üdvözlünk a Horizon platformon!</h2>
+    <p class="intro">
+      A <strong>Horizon</strong> a jövő digitális oktatási rendszere, amely lehetőséget biztosít a diákok, tanárok és iskolák számára, hogy egy közös, modern felületen kapcsolódjanak egymáshoz.  
+      Célunk, hogy átláthatóbbá, könnyebbé és élvezetesebbé tegyük az online tanulást és az iskolai együttműködést.
+    </p>
 
-    <script>
-        window.onload = function() {
-            const role = localStorage.getItem('role');
-            const profilePic = document.getElementById('profilePic');
+    <div class="card main-card">
+      <div class="img-placeholder">KÉP</div>
+      <p>
+        💡 <strong>Mit kínál a Horizon?</strong><br>
+        - Osztály- és feladatkezelő rendszer<br>
+        - Tanároknak és diákoknak külön testreszabott felület<br>
+        - Közösségi funkciók (chat, meeting room)<br>
+        - Biztonságos bejelentkezés, profilkezelés
+      </p>
+    </div>
 
-            if (role) {
-                if (role === 'Student') {
-                    profilePic.src = 'img/student.png';
-                } else if (role === 'Teacher') {
-                    profilePic.src = 'img/teacher.png';
-                }
-            }
-        };
+    <div class="card-row">
+      <div class="card small-card">
+        <div class="img-placeholder">KÉP</div>
+      </div>
+      <div class="card text-card">
+        <p>
+          A Horizon platform egy digitális ugródeszka az oktatás jövője felé.  
+          Legyen szó házi feladatról, tanórai anyagról vagy közös munkáról, minden eszköz kéznél van.
+        </p>
+      </div>
+      <div class="card small-card">
+        <div class="img-placeholder">KÉP</div>
+      </div>
+    </div>
 
-        function selectRole(role, imgSrc) {
-            localStorage.setItem('role', role);
-            localStorage.setItem('profilePic', imgSrc);
-            window.location.href = "chat.html";
-        }
+    <div class="logo-bottom">
+      <img src="assets/imgs/horizon_logo.png" alt="Horizon logó kicsi">
+    </div>
+  </main>
 
-        function logout() {
-            localStorage.removeItem('role');
-            localStorage.removeItem('profilePic');
-            window.location.href = "index.html";
-        }
+  <footer>
+    <h2>FOOTER</h2>
+  </footer>
 
-        function changeRole() {
-            localStorage.removeItem('role');
-            localStorage.removeItem('profilePic');
-            window.location.href = "index.html";
-        }
-    </script>
 </body>
 </html>
