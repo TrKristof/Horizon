@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2025. Ápr 29. 16:54
+-- Létrehozás ideje: 2025. Máj 01. 14:36
 -- Kiszolgáló verziója: 10.4.27-MariaDB
 -- PHP verzió: 8.2.0
 
@@ -182,21 +182,22 @@ CREATE TABLE `schools` (
   `Country` varchar(100) NOT NULL,
   `Address` varchar(150) NOT NULL,
   `Email` varchar(100) NOT NULL,
-  `Password` varchar(255) NOT NULL,
+  `Password` varchar(255) DEFAULT NULL,
   `Date` datetime NOT NULL,
   `IsActive` tinyint(1) DEFAULT 0,
   `ExpirationDate` datetime NOT NULL,
-  `UserType` enum('school') DEFAULT 'school'
+  `UserType` enum('school') DEFAULT 'school',
+  `status` enum('pending','accepted','rejected') DEFAULT 'pending'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_hungarian_ci;
 
 --
 -- A tábla adatainak kiíratása `schools`
 --
 
-INSERT INTO `schools` (`Id`, `Name`, `Country`, `Address`, `Email`, `Password`, `Date`, `IsActive`, `ExpirationDate`, `UserType`) VALUES
-(1, 'Springfield High', 'USA', '742 Evergreen Terrace', 'admin1@springfield.edu', 'password123', '2025-04-03 09:39:33', 1, '2026-04-03 09:39:33', 'school'),
-(2, 'Riverdale Academy', 'Canada', '123 River St', 'admin2@riverdale.edu', 'password123', '2025-04-03 09:39:33', 1, '2026-04-03 09:39:33', 'school'),
-(3, 'Hill Valley Institute', 'UK', '88 Time St', 'admin3@hillvalley.edu', 'password123', '2025-04-03 09:39:33', 1, '2026-04-03 09:39:33', 'school');
+INSERT INTO `schools` (`Id`, `Name`, `Country`, `Address`, `Email`, `Password`, `Date`, `IsActive`, `ExpirationDate`, `UserType`, `status`) VALUES
+(1, 'Springfield High', 'USA', '742 Evergreen Terrace', 'admin1@springfield.edu', 'password123', '2025-04-03 09:39:33', 1, '2026-04-03 09:39:33', 'school', 'pending'),
+(2, 'Riverdale Academy', 'Canada', '123 River St', 'admin2@riverdale.edu', 'password123', '2025-04-03 09:39:33', 1, '2026-04-03 09:39:33', 'school', 'pending'),
+(3, 'Hill Valley Institute', 'UK', '88 Time St', 'admin3@hillvalley.edu', 'password123', '2025-04-03 09:39:33', 1, '2026-04-03 09:39:33', 'school', 'pending');
 
 -- --------------------------------------------------------
 
