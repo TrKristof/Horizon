@@ -1,6 +1,7 @@
 <?php
 $pageStylesheet = "/Horizon/scripts/style/login.css";
 require "/xampp/htdocs/Horizon/views/header.php";
+include_once '/Horizon/views/navbar.php';
 
 // Hibák/siker/form mezők betöltése session-ből
 $errors = $_SESSION["school_register_errors"] ?? [];

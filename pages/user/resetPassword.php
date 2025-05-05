@@ -1,5 +1,6 @@
 <?php
 require_once "/xampp/htdocs/Horizon/views/header.php"; // Fejléc megjelenítése
+include_once '/Horizon/views/navbar.php';
 session_start();
 ?>
 

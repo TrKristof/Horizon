@@ -1,5 +1,6 @@
 <?php
-$pageStylesheet = '../style/styles.css';
+$pageStylesheet = 'Horizon/style/styles.css';
+include_once '/Horizon/views/navbar.php';
 ?>
 
 <!DOCTYPE html>

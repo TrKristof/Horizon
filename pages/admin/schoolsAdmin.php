@@ -1,6 +1,7 @@
 <?php
 require "/xampp/htdocs/Horizon/database/db.php";
 require "/xampp/htdocs/Horizon/views/header.php";
+include_once '/Horizon/views/navbar.php';
 
 // pending iskolák
 $sql = "SELECT * FROM schools WHERE status = 'pending'";

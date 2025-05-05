@@ -1,27 +1,32 @@
 <!DOCTYPE html>
 <html lang="hu">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Horizon</title>
-  <link rel="stylesheet" href="/style/styles.css">
+  <link rel="stylesheet" href="fooldal.css?v=1">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <header>
-    <nav>
-      <img src="assets/imgs/horizon_logo.png" alt="Horizon logó" height="40">
-      <a href="/pages/user/rolunk.php">Horizon</a>
-      <a href="#">Profil</a>
-      <a href="/pages/user/login.php">Jelentkezés</a>
+  <header class="header">
+    <nav class="navbar">
+      <div class="logo-container">
+        <img src="assets/imgs/horizon_logo.png" alt="Horizon logó" class="logo" />
+        <a href="/pages/user/rolunk.php" class="nav-link">Horizon</a>
+      </div>
+      <div class="nav-links">
+        <a href="/pages/user/profil.php" class="nav-link">Profil</a>
+        <a href="/pages/user/login.php" class="nav-link btn-login">Jelentkezés</a>
+      </div>
     </nav>
   </header>
 
   <section class="hero">
-    <img src="assets/imgs/horizon_logo.png" alt="Horizon logó nagy" class="hero-logo">
+    <img src="assets/imgs/horizon_logo.png" alt="Horizon logó nagy" class="hero-logo" />
     <div class="login-box">
-      <button>Bejelentkezés</button>
-      <p>Nincs fiókod? <a href="/pages/user/register.php">REGISZTRÁCIÓ</a></p>
+      <button class="btn primary">Bejelentkezés</button>
+      <p>Nincs fiókod? <a href="/pages/user/register.php" class="link">REGISZTRÁCIÓ</a></p>
     </div>
   </section>
 
@@ -32,7 +37,7 @@
   </section>
 
   <main class="content-box">
-    <h2>Üdvözlünk a Horizon platformon!</h2>
+    <h2 class="section-title">Üdvözlünk a Horizon platformon!</h2>
     <p class="intro">
       A <strong>Horizon</strong> a jövő digitális oktatási rendszere, amely lehetőséget biztosít a diákok, tanárok és iskolák számára, hogy egy közös, modern felületen kapcsolódjanak egymáshoz.  
       Célunk, hogy átláthatóbbá, könnyebbé és élvezetesebbé tegyük az online tanulást és az iskolai együttműködést.
@@ -41,11 +46,11 @@
     <div class="card main-card">
       <div class="img-placeholder">KÉP</div>
       <p>
-        💡 <strong>Mit kínál a Horizon?</strong><br>
-        - Osztály- és feladatkezelő rendszer<br>
-        - Tanároknak és diákoknak külön testreszabott felület<br>
-        - Közösségi funkciók (chat, meeting room)<br>
-        - Biztonságos bejelentkezés, profilkezelés
+        💡 <strong>Mit kínál a Horizon?</strong><br />
+        – Osztály- és feladatkezelő rendszer<br />
+        – Tanároknak és diákoknak külön testreszabott felület<br />
+        – Közösségi funkciók (chat, meeting room)<br />
+        – Biztonságos bejelentkezés, profilkezelés
       </p>
     </div>
 
@@ -65,12 +70,12 @@
     </div>
 
     <div class="logo-bottom">
-      <img src="assets/imgs/horizon_logo.png" alt="Horizon logó kicsi">
+      <img src="assets/imgs/horizon_logo.png" alt="Horizon logó kicsi" />
     </div>
   </main>
 
-  <footer>
-    <h2>FOOTER</h2>
+  <footer class="footer">
+    <p>© 2025 Horizon. Minden jog fenntartva.</p>
   </footer>
 
 </body>

@@ -1,5 +1,6 @@
 <?php
 require "/xampp/htdocs/Horizon/views/header.php";
+include_once '/Horizon/views/navbar.php';
 
 //Iskola e
 /*if (!isset($_SESSION["user_type"]) || $_SESSION["user_type"] !== "school") {

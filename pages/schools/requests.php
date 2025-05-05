@@ -1,6 +1,7 @@
 <?php
 require "/xampp/htdocs/Horizon/views/header.php";
 require "/xampp/htdocs/Horizon/database/db.php";
+include_once '/Horizon/views/navbar.php';
 session_start();
 
 //iskola e
