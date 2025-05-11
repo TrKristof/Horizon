@@ -10,7 +10,7 @@
   $role = $_SESSION['role'] ?? 'felhasználó';
 ?>
 
-<?php include('../../views/header.php'); ?>
+<?php include('Horizon/views/header.php'); ?>
 
 <div class="content-box">
   <h2 class="section-title">Profilod</h2>
@@ -28,4 +28,4 @@
   </div>
 </div>
 
-<?php include('../../views/footer.php'); ?>
+<?php include('Horizon/views/footer.php'); ?>
