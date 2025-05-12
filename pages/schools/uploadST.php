@@ -1,6 +1,5 @@
 <?php
 require "/xampp/htdocs/Horizon/views/header.php";
-include_once '/Horizon/views/navbar.php';
 session_start();
 
 // Ellenőrzés: csak iskola

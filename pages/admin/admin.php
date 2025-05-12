@@ -3,7 +3,6 @@ require_once "/xampp/htdocs/Horizon/database/db.php";
 
 $pageStylesheet = "/Horizon/scripts/style/adminPage.css";
 
-include_once '/Horizon/views/navbar.php';
 
 //admin e
 /*if (!isset($_SESSION["user_type"]) || $_SESSION["user_type"] !== "admin") {

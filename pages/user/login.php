@@ -1,8 +1,7 @@
 <?php
 // Fejléc betöltése
-$pageStylesheet = "/Horizon/scripts/style/login.css";
+$pageStylesheet = "/Horizon/style/login.css";
 require "/xampp/htdocs/Horizon/views/header.php";
-include_once '/Horizon/views/navbar.php';
 
 // Hibaüzenetek megjelenítése (ha van)
 if (isset($_SESSION["alert"])): ?>

@@ -1,9 +1,7 @@
 <?php
 require_once "/xampp/htdocs/Horizon/database/db.php";
 
-$pageStylesheet = "/Horizon/scripts/style/login.css";
-
-include_once '/Horizon/views/navbar.php';
+$pageStylesheet = "/Horizon/style/login.css";
 
 // Iskolák listájának lekérése az adatbázisból
 $sql = "SELECT Id, Name FROM schools WHERE IsActive = 1";

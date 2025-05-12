@@ -1,4 +1,4 @@
-<?php
+<?php 
 session_start();
 require "/xampp/htdocs/Horizon/database/db.php";
 
@@ -10,14 +10,19 @@ if (!$schoolId || !in_array($action, ["accept", "reject"])) {
     exit;
 }
 
-//elfogadás/elutasítás
+// elfogadás/elutasítás
 if ($action === "accept") {
-    $stmt = $pdo->prepare("UPDATE schools SET status = 'accepted' WHERE id = ?");
-    $stmt->execute([$schoolId]);
+    $stmt = $conn->prepare("UPDATE schools SET status = 'accepted' WHERE id = ?");
+    $stmt->bind_param("i", $schoolId);
+    $stmt->execute();
+    $stmt->close();
 } elseif ($action === "reject") {
-    $stmt = $pdo->prepare("UPDATE schools SET status = 'rejected' WHERE id = ?");
-    $stmt->execute([$schoolId]);
+    $stmt = $conn->prepare("UPDATE schools SET status = 'rejected' WHERE id = ?");
+    $stmt->bind_param("i", $schoolId);
+    $stmt->execute();
+    $stmt->close();
 }
 
+$conn->close();
 header("Location: /Horizon/views/schoolsAdmin.php");
 exit;
