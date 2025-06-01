@@ -2,32 +2,48 @@
 require "/xampp/htdocs/Horizon/database/db.php";
 session_start();
 
-$schoolId = $_SESSION["school_id"];
+//Ha nincs SESSION-be iskolának id-je akkor ne tudjon felölteni
+/*if (!isset($_SESSION["school_id"])) {
+    die("Nincs bejelentkezve iskola!");
+}*/
+
+$schoolId = 1; //$_SESSION["school_id"]; Egyenlőre nem a SESSION-ből szedi ki az id-t
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    //diákok mentése
+    // Diákok mentése
     if (isset($_POST["students"])) {
         foreach ($_POST["students"] as $student) {
-            $sql = "INSERT INTO pending_users (Name, Email, StudentCard, UserType, SchoolId, Status, IsActive, ExpirationDate) 
-                    VALUES (?, ?, ?, 'student', ?, 'pending', 1, ?)";
+            $sql = "INSERT INTO pending_users (Name, Email, StudentCard, UserType, SchoolId, IsActive, ExpirationDate) 
+                    VALUES (?, ?, ?, 'student', ?, 1, ?)";
             $stmt = $conn->prepare($sql);
-            $stmt->bind_param("sssiss", $student["name"], $student["email"], $student["student_card"], $schoolId, $student["expiration_date"]);
-            $stmt->execute();
+            if (!$stmt) {
+                die("Hiba a diák prepare()-ben: " . $conn->error);
+            }
+            $stmt->bind_param("sssis", $student["name"], $student["email"], $student["student_card"], $schoolId, $student["expiration_date"]);
+            if (!$stmt->execute()) {
+                die("Hiba diák beszúrásakor: " . $stmt->error);
+            }
         }
     }
 
-    //tanárok mentése
+    // Tanárok mentése
     if (isset($_POST["teachers"])) {
         foreach ($_POST["teachers"] as $teacher) {
-            $sql = "INSERT INTO pending_users (Name, Email, UserType, SchoolId, Status, IsActive, ExpirationDate) 
-                    VALUES (?, ?, 'teacher', ?, 'pending', 1, ?)";
+            $sql = "INSERT INTO pending_users (Name, Email, IdentityCard, UserType, SchoolId, IsActive, ExpirationDate) 
+                    VALUES (?, ?, ?, 'teacher', ?, 1, ?)";
             $stmt = $conn->prepare($sql);
-            $stmt->bind_param("ssiss", $teacher["name"], $teacher["email"], $schoolId, $teacher["expiration_date"]);
-            $stmt->execute();
+            if (!$stmt) {
+                die("Hiba a tanár prepare()-ben: " . $conn->error);
+            }
+            $stmt->bind_param("sssis", $teacher["name"], $teacher["email"], $teacher["identity_card"], $schoolId, $teacher["expiration_date"]);
+            if (!$stmt->execute()) {
+                die("Hiba tanár beszúrásakor: " . $stmt->error);
+            }
         }
     }
 
     $_SESSION["alert"] = ["type" => "success", "message" => "Adatok sikeresen beküldve az admin jóváhagyására!"];
-    header("Location: /Horizon/pages/schools/uploadStudentsTeachers.php");
+    header("Location: /Horizon/pages/schools/uploadST.php");
     exit();
 }
+?>

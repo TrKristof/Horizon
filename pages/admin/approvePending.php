@@ -9,7 +9,7 @@ require "/xampp/htdocs/Horizon/database/db.php";
 }*/
 
 //függő diákok és tanárok lekérése
-$sql = "SELECT * FROM pending_users";
+$sql = "SELECT * FROM pending_users WHERE Status = 'pending'";
 $result = $conn->query($sql);
 ?>
 

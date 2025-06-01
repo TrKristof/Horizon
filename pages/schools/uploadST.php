@@ -1,12 +1,11 @@
 <?php
 require "/xampp/htdocs/Horizon/views/header.php";
-session_start();
 
 // Ellenőrzés: csak iskola
-/*if (!isset($_SESSION["user_type"]) || $_SESSION["user_type"] !== "school") {
-    header("Location: /Horizon/pages/user/login.php");
-    exit();
-}*/
+// if (!isset($_SESSION["user_type"]) || $_SESSION["user_type"] !== "school") {
+//     header("Location: /Horizon/pages/user/login.php");
+//     exit();
+// }  
 ?>
 
 <div class="container mt-4">
@@ -72,6 +71,10 @@ document.getElementById('addTeacherBtn').addEventListener('click', () => {
                 <div class="col">
                     <label>Email</label>
                     <input type="email" class="form-control" name="teachers[${teacherCount}][email]" required>
+                </div>
+                <div class="col">
+                    <label>Személyi Igazolvány</label>
+                    <input type="text" class="form-control" name="teachers[${teacherCount}][identity_card]" required>
                 </div>
                 <div class="col">
                     <label>Lejárati Dátum</label>

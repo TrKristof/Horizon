@@ -10,7 +10,7 @@ require "/xampp/htdocs/Horizon/views/header.php";
 require "/xampp/htdocs/Horizon/database/db.php";
 
 // Iskola 
-$schoolId = $_SESSION["user_id"]; // school ID-je a sessionben van
+$schoolId = 1; //$_SESSION["school_id"]; school ID-je a sessionben van
 
 // Diákok
 $students_sql = "SELECT Id, Name, Email, StudentCard, Date, IsActive, ExpirationDate FROM students WHERE SchoolId = ?";
